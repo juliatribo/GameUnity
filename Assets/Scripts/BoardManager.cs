@@ -150,7 +150,10 @@ namespace Completed
                     //LAKE
 
                     if (x > 14 && x < 16 && y > 0 && y < 14)
-                        toInstantiate = waterTiles[Random.Range(0, 2)];
+                        toInstantiate = waterTiles[0];
+
+                    if (x == 15 && y == 12)
+                        toInstantiate = waterTiles[1];
 
                     if (x == 14 && y >0 && y < 14)
                         toInstantiate = waterTiles[2];
