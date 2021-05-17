@@ -1,0 +1,1352 @@
+fileFormatVersion: 2
+guid: de6adf009271a4590987388457300c5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5520324119946816886
+    second: fries-clipart-pixelated-17_0
+  - first:
+      213: 1445302822531632221
+    second: fries-clipart-pixelated-17_1
+  - first:
+      213: -5850299544397719227
+    second: fries-clipart-pixelated-17_2
+  - first:
+      213: 5180254785336222873
+    second: fries-clipart-pixelated-17_3
+  - first:
+      213: 4899029093885687203
+    second: fries-clipart-pixelated-17_4
+  - first:
+      213: 4155341151957849353
+    second: fries-clipart-pixelated-17_5
+  - first:
+      213: -7202985199313536665
+    second: fries-clipart-pixelated-17_6
+  - first:
+      213: 7062297480107067141
+    second: fries-clipart-pixelated-17_7
+  - first:
+      213: 8328761174858422272
+    second: fries-clipart-pixelated-17_8
+  - first:
+      213: 7228429093673857489
+    second: fries-clipart-pixelated-17_9
+  - first:
+      213: 3747541669790511700
+    second: fries-clipart-pixelated-17_10
+  - first:
+      213: -3252731980491333373
+    second: fries-clipart-pixelated-17_11
+  - first:
+      213: 293229245305935939
+    second: fries-clipart-pixelated-17_12
+  - first:
+      213: -1580537059339311499
+    second: fries-clipart-pixelated-17_13
+  - first:
+      213: -6213313418566002360
+    second: fries-clipart-pixelated-17_14
+  - first:
+      213: -2307116740420959184
+    second: fries-clipart-pixelated-17_15
+  - first:
+      213: 5498124454758725803
+    second: fries-clipart-pixelated-17_16
+  - first:
+      213: 1207170506889732207
+    second: fries-clipart-pixelated-17_17
+  - first:
+      213: -776207766138181044
+    second: fries-clipart-pixelated-17_18
+  - first:
+      213: 313208222842886427
+    second: fries-clipart-pixelated-17_19
+  - first:
+      213: -4551817246683124512
+    second: fries-clipart-pixelated-17_20
+  - first:
+      213: -7271060399324739868
+    second: fries-clipart-pixelated-17_21
+  - first:
+      213: -277190425035636162
+    second: fries-clipart-pixelated-17_22
+  - first:
+      213: -8822633589082563982
+    second: fries-clipart-pixelated-17_23
+  - first:
+      213: -5437540595417137055
+    second: fries-clipart-pixelated-17_24
+  - first:
+      213: 5141078692582443344
+    second: fries-clipart-pixelated-17_25
+  - first:
+      213: -3330129179646211774
+    second: fries-clipart-pixelated-17_26
+  - first:
+      213: -774175971234611550
+    second: fries-clipart-pixelated-17_27
+  - first:
+      213: 4394333265630970289
+    second: fries-clipart-pixelated-17_28
+  - first:
+      213: 206860191263309265
+    second: fries-clipart-pixelated-17_29
+  - first:
+      213: -1299220635392746732
+    second: fries-clipart-pixelated-17_30
+  - first:
+      213: 118367361213006812
+    second: fries-clipart-pixelated-17_31
+  - first:
+      213: -3130546628373083931
+    second: fries-clipart-pixelated-17_32
+  - first:
+      213: -5565195517053404096
+    second: fries-clipart-pixelated-17_33
+  - first:
+      213: 6138181906544562839
+    second: fries-clipart-pixelated-17_34
+  - first:
+      213: 8603783065398828837
+    second: fries-clipart-pixelated-17_35
+  - first:
+      213: -1156452205286823213
+    second: fries-clipart-pixelated-17_36
+  - first:
+      213: -8900861386613036685
+    second: fries-clipart-pixelated-17_37
+  - first:
+      213: 364266650568659611
+    second: fries-clipart-pixelated-17_38
+  - first:
+      213: 7645844127561641666
+    second: fries-clipart-pixelated-17_39
+  - first:
+      213: 3540125867464165488
+    second: fries-clipart-pixelated-17_40
+  - first:
+      213: -2934522058933042839
+    second: fries-clipart-pixelated-17_41
+  - first:
+      213: 4867771808304139021
+    second: fries-clipart-pixelated-17_42
+  - first:
+      213: 967258666199242538
+    second: fries-clipart-pixelated-17_43
+  - first:
+      213: -8911707286210227371
+    second: fries-clipart-pixelated-17_44
+  - first:
+      213: -6753178963899340061
+    second: fries-clipart-pixelated-17_45
+  - first:
+      213: 1472152400392100274
+    second: fries-clipart-pixelated-17_46
+  - first:
+      213: -4705996444017408709
+    second: fries-clipart-pixelated-17_47
+  - first:
+      213: -6910104851163281619
+    second: fries-clipart-pixelated-17_48
+  - first:
+      213: -642771146725997094
+    second: fries-clipart-pixelated-17_49
+  - first:
+      213: 214871833951563097
+    second: fries-clipart-pixelated-17_50
+  - first:
+      213: 8333828567719098679
+    second: fries-clipart-pixelated-17_51
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 590
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a829c89f57ed363b0800000000000000
+      internalID: -5520324119946816886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 588
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c0ed1724fbe0410800000000000000
+      internalID: 1445302822531632221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 594
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5495b828f8f8fcea0800000000000000
+      internalID: -5850299544397719227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 588
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994abf5f746f3e740800000000000000
+      internalID: 5180254785336222873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_4
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 588
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a53c553109dcf340800000000000000
+      internalID: 4899029093885687203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 588
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905920303ccbaa930800000000000000
+      internalID: 4155341151957849353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 524
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7693580df1bd90c90800000000000000
+      internalID: -7202985199313536665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_7
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 524
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5070be7f322520260800000000000000
+      internalID: 7062297480107067141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_8
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 524
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008508e2924b59370800000000000000
+      internalID: 8328761174858422272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 524
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1778c76f9805460800000000000000
+      internalID: 7228429093673857489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_10
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 524
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45276d81b41f10430800000000000000
+      internalID: 3747541669790511700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 460
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301e2495f79fbd2d0800000000000000
+      internalID: -3252731980491333373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_12
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 460
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348573ce172c11400800000000000000
+      internalID: 293229245305935939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_13
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 460
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5766db72bedc01ae0800000000000000
+      internalID: -1580537059339311499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_14
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 460
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84994388d50e5c9a0800000000000000
+      internalID: -6213313418566002360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_15
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 460
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0340ad75c897bffd0800000000000000
+      internalID: -2307116740420959184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_16
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 396
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba838c0bf034d4c40800000000000000
+      internalID: 5498124454758725803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_17
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 396
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60ad7e1e2bb0c010800000000000000
+      internalID: 1207170506889732207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_18
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 396
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a2f63362b5a35f0800000000000000
+      internalID: -776207766138181044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_19
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 396
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19184f183db85400800000000000000
+      internalID: 313208222842886427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_20
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 396
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eca4f8a452b4d0c0800000000000000
+      internalID: -4551817246683124512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_21
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 332
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6c6dd2711081b90800000000000000
+      internalID: -7271060399324739868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_22
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 332
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e328c9ce6c8372cf0800000000000000
+      internalID: -277190425035636162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_23
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 332
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27add4bbe75bf8580800000000000000
+      internalID: -8822633589082563982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_24
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 332
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160456643a9f984b0800000000000000
+      internalID: -5437540595417137055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_25
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 332
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059c4b115d7c85740800000000000000
+      internalID: 5141078692582443344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_26
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 268
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2494607a72109c1d0800000000000000
+      internalID: -3330129179646211774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_27
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 268
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aefae05e039145f0800000000000000
+      internalID: -774175971234611550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 268
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1cd9aa2decbfc30800000000000000
+      internalID: 4394333265630970289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_29
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 268
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd3b6a7f3aeed200800000000000000
+      internalID: 206860191263309265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_30
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 268
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bde8637bd38fde0800000000000000
+      internalID: -1299220635392746732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_31
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 204
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd30a16ec7684a100800000000000000
+      internalID: 118367361213006812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_32
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 204
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e886078d601e84d0800000000000000
+      internalID: -3130546628373083931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_33
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 204
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c7f64b92474c2b0800000000000000
+      internalID: -5565195517053404096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_34
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 204
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792915a2ce33f2550800000000000000
+      internalID: 6138181906544562839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_35
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 204
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f5e99fc17c66770800000000000000
+      internalID: 8603783065398828837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 140
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da6920b8d473ffe0800000000000000
+      internalID: -1156452205286823213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_37
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 140
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37960f74ab9c97480800000000000000
+      internalID: -8900861386613036685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_38
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 140
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b929aa6b6922e0500800000000000000
+      internalID: 364266650568659611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_39
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 140
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce615f79be7b1a60800000000000000
+      internalID: 7645844127561641666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_40
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 140
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0788f5658bd012130800000000000000
+      internalID: 3540125867464165488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_41
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 140
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9618fb33cbb7647d0800000000000000
+      internalID: -2934522058933042839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_42
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 76
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b01a94baccd8340800000000000000
+      internalID: 4867771808304139021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_43
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 76
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2759b4d1a46c6d00800000000000000
+      internalID: 967258666199242538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_44
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 76
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553dd2f7071435480800000000000000
+      internalID: -8911707286210227371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_45
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 76
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaa3202383e742a0800000000000000
+      internalID: -6753178963899340061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_46
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 76
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b91c90fec22e6410800000000000000
+      internalID: 1472152400392100274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_47
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 12
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b354718ea21f0beb0800000000000000
+      internalID: -4705996444017408709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_48
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 12
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2785b9cf306a10a0800000000000000
+      internalID: -6910104851163281619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_49
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 12
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5c68f2c0b6417f0800000000000000
+      internalID: -642771146725997094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_50
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 12
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d6be66bc06bf200800000000000000
+      internalID: 214871833951563097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fries-clipart-pixelated-17_51
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 12
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73936e58de4b7a370800000000000000
+      internalID: 8333828567719098679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
