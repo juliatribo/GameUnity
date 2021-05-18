@@ -53,10 +53,30 @@ namespace Completed
             gridPositions.Clear();
 
             //Loop through x axis (columns).
-            for (int x = 1; x < columns; x++)
+            for (int x = 9; x < 13; x++)
             {
                 //Within each column, loop through y axis (rows).
-                for (int y = 1; y < rows; y++)
+                for (int y = 7; y < 12; y++)
+                {
+                    //At each index add a new Vector3 to our list with the x and y coordinates of that position.
+                    gridPositions.Add(new Vector3(x, y, 0f));
+                }
+            }
+
+            for (int x = 12; x < 14; x++)
+            {
+                //Within each column, loop through y axis (rows).
+                for (int y = 2; y < 5; y++)
+                {
+                    //At each index add a new Vector3 to our list with the x and y coordinates of that position.
+                    gridPositions.Add(new Vector3(x, y, 0f));
+                }
+            }
+
+            for (int x = 16; x < 27; x++)
+            {
+                //Within each column, loop through y axis (rows).
+                for (int y = 2; y < 4; y++)
                 {
                     //At each index add a new Vector3 to our list with the x and y coordinates of that position.
                     gridPositions.Add(new Vector3(x, y, 0f));
