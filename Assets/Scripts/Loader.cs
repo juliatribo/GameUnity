@@ -24,4 +24,5 @@ public class Loader : MonoBehaviour
         transform.position = player.transform.position + position;
     }
 
+
 }

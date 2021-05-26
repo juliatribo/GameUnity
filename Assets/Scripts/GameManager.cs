@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
-    private BoardManager boardScript;                        //Store a reference to our BoardManager which will set up the level.
-    private int level = 3;         
-    public int playerLifePoints = 100;
-    [HideInInspector] public bool playersTurn = true;
+    public BoardManager boardScript;
 
+
+    public int playerLifePoints = 100;
+    public  bool palanca = false;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -25,17 +25,17 @@ public class GameManager : MonoBehaviour
 
         //If instance already exists and it's not this:
         else if (instance != this)
-
-            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
 
         //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         //Get a component reference to the attached BoardManager script
         boardScript = GetComponent<BoardManager>();
 
-        //Call the InitGame function to initialize the first level 
+
+
+        //Call the InitGame function to initialize the first level
         InitGame();
     }
 
@@ -43,9 +43,31 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene(level);
+        boardScript.SetupScene(0);
 
     }
+
+    public void Restaurant()
+    {
+        boardScript.SetupScene(1);
+      
+    }
+
+
+    public void Palanca()
+    {
+        this.palanca = true;
+    }
+
+    public void Bridge()
+    {
+        if (palanca)
+            boardScript.SetupScene(3);
+        else
+            boardScript.SetupScene(0);
+    }
+
+
 
     public void GameOver()
     {

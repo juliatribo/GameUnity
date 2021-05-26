@@ -8,6 +8,9 @@ TagManager:
   - Exit
   - Food
   - House
+  - Bridge
+  - Palanca
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
+using Completed;
 
 //Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
 public class Player : MovingObject
 {
     public float restartLevelDelay = 1f;        //Delay time in seconds to restart level.
-    public int pointsPerFood = 10;                     //How much damage a player does to a wall when chopping it.
+    public int pointsPerFood = 10;
+    public BoardManager boardScript;            //How much damage a player does to a wall when chopping it.
 
 
     private Animator animator;                    //Used to store a reference to the Player's animator component.
@@ -17,9 +19,8 @@ public class Player : MovingObject
     {
         //Get a component reference to the Player's animator component
         animator = GetComponent<Animator>();
-
-        //Get the current food point total stored in GameManager.instance between levels.
         life = GameManager.instance.playerLifePoints;
+        boardScript = GetComponent<BoardManager>();
 
         //Call the Start function of the MovingObject base class.
         base.Start();
@@ -66,6 +67,8 @@ public class Player : MovingObject
             AttemptMove(horizontal, vertical);
         }
 
+
+
     }
 
     //AttemptMove overrides the AttemptMove function in the base class MovingObject
@@ -85,7 +88,6 @@ public class Player : MovingObject
         else
             animator.SetTrigger("stopMoving");
             
-
         //Since the player has moved and lost food points, check if the game has ended.
         CheckIfGameOver();
     }
@@ -105,13 +107,32 @@ public class Player : MovingObject
             enabled = false;
         }
 
-        if (other.tag == "House")
+        else if (other.tag == "House")
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Invoke("Restart", restartLevelDelay);
+            Invoke("Restaurant", restartLevelDelay);
+          
+            //Disable the player object since level is over.
+
+        }
+
+
+        else if (other.tag == "Palanca")
+        {
+            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
+            Invoke("Palanca", restartLevelDelay);
 
             //Disable the player object since level is over.
-            enabled = false;
+
+        }
+
+        else if (other.tag == "Door")
+        {
+            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
+            Invoke("Bridge", restartLevelDelay);
+
+            //Disable the player object since level is over.
+
         }
 
         //Check if the tag of the trigger collided with is Food.
@@ -131,8 +152,33 @@ public class Player : MovingObject
     //Restart reloads the scene when called.
     private void Restart()
     {
+       // GameManager.instance.ChangeBoard(0);
+
         //Load the last scene loaded, in this case Main, the only scene in the game.
-        SceneManager.LoadScene(0);
+    }
+
+    private void Restaurant()
+    {
+        GameManager.instance.Restaurant();
+
+
+        //Load the last scene loaded, in this case Main, the only scene in the game.
+    }
+
+    private void Palanca()
+    {
+        GameManager.instance.Palanca();
+
+
+        //Load the last scene loaded, in this case Main, the only scene in the game.
+    }
+
+    private void Bridge()
+    {
+        GameManager.instance.Bridge();
+
+
+        //Load the last scene loaded, in this case Main, the only scene in the game.
     }
 
 
