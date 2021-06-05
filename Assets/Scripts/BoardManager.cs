@@ -21,11 +21,15 @@ namespace Completed
         GameObject instance6;
         GameObject instance7;
 
+        bool restaurant = false;
+        bool bridge = false;
+        bool main = false;
+
 
 
         public void SetupScene(int level)
         {
-            if (level == 0)
+            if (level == 0 && !main)
             {
                 Destroy(instance);
                 Destroy(instance2);
@@ -62,9 +66,13 @@ namespace Completed
                 instance6.transform.SetParent(boardHolder);
                 instance7.transform.SetParent(boardHolder);
 
+                restaurant = false;
+                bridge = false;
+                main = true;
+
             }
 
-            else if (level == 1)
+            else if (level == 1 && !restaurant)
             {
 
                 Destroy(instance);
@@ -81,17 +89,21 @@ namespace Completed
                 GameObject toInstantiate2 = Resources.Load("Prefabs/Restaurant/Door") as GameObject;
                 GameObject toInstantiate3 = Resources.Load("Prefabs/Restaurant/Palanca") as GameObject;
 
-                instance = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-                instance2 = Instantiate(toInstantiate2, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-                instance3 = Instantiate(toInstantiate3, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+                instance = Instantiate(toInstantiate, new Vector3(-2, -2, 0), Quaternion.identity) as GameObject;
+                instance2 = Instantiate(toInstantiate2, new Vector3(-2, -2, 0), Quaternion.identity) as GameObject;
+                instance3 = Instantiate(toInstantiate3, new Vector3(-2, -2, 0), Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(boardHolder);
                 instance2.transform.SetParent(boardHolder);
                 instance3.transform.SetParent(boardHolder);
 
+                restaurant = true;
+                bridge = false;
+                main = false;
+
             }
 
-            else if (level == 3)
+            else if (level == 3 && !bridge)
             {
                 Destroy(instance);
                 Destroy(instance2);
@@ -126,6 +138,10 @@ namespace Completed
                 instance5.transform.SetParent(boardHolder);
                 instance6.transform.SetParent(boardHolder);
                 instance7.transform.SetParent(boardHolder);
+
+                restaurant = false;
+                bridge = false;
+                main = false;
             }
         }
     }

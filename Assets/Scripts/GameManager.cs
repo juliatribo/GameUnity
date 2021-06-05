@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void Bridge()
     {
-        if (palanca)
+        if (palanca==true)
             boardScript.SetupScene(3);
         else
             boardScript.SetupScene(0);
