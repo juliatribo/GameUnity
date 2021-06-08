@@ -3443,7 +3443,7 @@ GameObject:
   - component: {fileID: 3362791829188715831}
   - component: {fileID: 8034328945652288247}
   - component: {fileID: 5235827864791197964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: d4vpcfu-0f2f6879-4778-4b51-91cc-83fa7f15554c_105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23419,7 +23419,7 @@ GameObject:
   - component: {fileID: 1349459788876455766}
   - component: {fileID: 6369170405345318892}
   - component: {fileID: 5117390984524592485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: d4vpcfu-0f2f6879-4778-4b51-91cc-83fa7f15554c_105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23504,7 +23504,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1683594, y: -0.10101509}
+  m_Offset: {x: -0.057438612, y: 0.009905815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -23515,7 +23515,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6042178, y: 1.0954704}
+  m_Size: {x: 1.3823762, y: 0.8736286}
   m_EdgeRadius: 0
 --- !u!1 &4642044835664439876
 GameObject:
