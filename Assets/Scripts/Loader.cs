@@ -23,7 +23,6 @@ public class Loader : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position + position;
-
     }
 
 

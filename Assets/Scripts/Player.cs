@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 using Completed;
 
-//Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
+
 public class Player : MovingObject
 {
     public float restartLevelDelay = 1f;        //Delay time in seconds to restart level.
@@ -12,7 +12,8 @@ public class Player : MovingObject
 
 
     private Animator animator;                    //Used to store a reference to the Player's animator component.
-    private int life;                            //Used to store player food points total during level.
+    private int life;
+    private bool reset = true;
 
     //Start overrides the Start function of MovingObject
     protected override void Start()
@@ -41,146 +42,78 @@ public class Player : MovingObject
         int horizontal = 0;      //Used to store the horizontal move direction.
         int vertical = 0;        //Used to store the vertical move direction.
 
-
-        //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
         horizontal = (int)(Input.GetAxisRaw("Horizontal"));
-
-        //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
         vertical = (int)(Input.GetAxisRaw("Vertical"));
 
         if (horizontal == 0 && vertical == 0)
         {
             animator.SetTrigger("stopMoving");
         }
-
-        //Check if moving horizontally, if so set vertical to zero.
         if (horizontal != 0)
         {
             vertical = 0;
         }
-
-        //Check if we have a non-zero value for horizontal or vertical
         if (horizontal != 0 || vertical != 0)
         {
-            //Call AttemptMove passing in the generic parameter Wall, since that is what Player may interact with if they encounter one (by attacking it)
-            //Pass in horizontal and vertical as parameters to specify the direction to move Player in.
             AttemptMove(horizontal, vertical);
         }
-
-
-
     }
-
-    //AttemptMove overrides the AttemptMove function in the base class MovingObject
-    //AttemptMove takes a generic parameter T which for Player will be of the type Wall, it also takes integers for x and y direction to move in.
     private void AttemptMove(int xDir, int yDir)
     {
-
-        //Hit allows us to reference the result of the Linecast done in Move.
         RaycastHit2D hit;
-
-        //If Move returns true, meaning Player was able to move into an empty space.
         if (Move(xDir, yDir, out hit))
         {
             animator.SetTrigger("moving");
-            //Call RandomizeSfx of SoundManager to play the move sound, passing in two audio clips to choose from.
         }
         else
             animator.SetTrigger("stopMoving");
-
-        //Since the player has moved and lost food points, check if the game has ended.
         CheckIfGameOver();
     }
-
-
-
-    //OnTriggerEnter2D is sent when another object enters a trigger collider attached to this object (2D physics only).
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Check if the tag of the trigger collided with is Exit.
-        if (other.tag == "Exit")
+        if (other.tag == "Exit" && reset)
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Restart", restartLevelDelay);
-
-            //Disable the player object since level is over.
-            enabled = false;
+            reset = false;
         }
-
         else if (other.tag == "House")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Restaurant", restartLevelDelay);
-
-            //Disable the player object since level is over.
-
+            reset = true;
         }
-
-
         else if (other.tag == "Palanca")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Palanca", restartLevelDelay);
-
-            //Disable the player object since level is over.
-
         }
-
         else if (other.tag == "Door")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Bridge", restartLevelDelay);
-
-            //Disable the player object since level is over.
-
         }
-
-        //Check if the tag of the trigger collided with is Food.
         else if (other.tag == "Healthy1")
         {
-            //Add pointsPerFood to the players current food total.
             life += pointsPerFood;
-
-            //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
             Invoke("Healthy1", restartLevelDelay);
         }
-
         else if (other.tag == "Healthy2")
         {
-            //Add pointsPerFood to the players current food total.
             life += pointsPerFood;
-
-            //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
             Invoke("Healthy2", restartLevelDelay);
         }
-
         else if (other.tag == "Healthy3")
         {
-            //Add pointsPerFood to the players current food total.
             life += pointsPerFood;
-
-            //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
             Invoke("Healthy3", restartLevelDelay);
         }
-
         else if (other.tag == "Healthy4")
         {
-            //Add pointsPerFood to the players current food total.
             life += pointsPerFood;
-
-            //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
             Invoke("Healthy4", restartLevelDelay);
         }
-
-
     }
-
-
-    //Restart reloads the scene when called.
     private void Restart()
     {
         RestartPosition();
@@ -194,71 +127,45 @@ public class Player : MovingObject
         GameObject food4 = GameObject.FindWithTag("Healthy4");
         food4.SetActive(true);
     }
-
     private void Restaurant()
     {
-        RestartPositionRestaurant();
         GameManager.instance.Restaurant();
-     
     }
-
     private void Palanca()
     {
         GameManager.instance.Palanca();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
     }
-
     private void Bridge()
     {
+        RestartPositionRestaurant();
         GameManager.instance.Bridge();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
     }
-
-
-    //LoseFood is called when an enemy attacks the player.
-    //It takes a parameter loss which specifies how many points to lose.
     public void losLife(int loss)
     {
-
-        //Subtract lost food points from the players total.
         life -= loss;
 
-        //Check to see if game has ended.
         CheckIfGameOver();
     } 
-
     public void Healthy1()
     {
         GameManager.instance.Healthy1();
     }
-
     public void Healthy2()
     {
         GameManager.instance.Healthy2();
     }
-
     public void Healthy3()
     {
         GameManager.instance.Healthy3();
     }
-
     public void Healthy4()
     {
         GameManager.instance.Healthy4();
     }
-
-
-    //CheckIfGameOver checks if the player is out of food points and if so, ends the game.
     private void CheckIfGameOver()
     {
-        //Check if food point total is less than or equal to zero.
         if (life <= 0)
         {
-            //Call the GameOver function of GameManager.
             GameManager.instance.GameOver();
         }
     }

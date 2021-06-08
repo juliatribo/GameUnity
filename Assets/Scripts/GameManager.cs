@@ -91,13 +91,12 @@ public class GameManager : MonoBehaviour
 
     public void Exit()
     {
-        this.level = level + 1;
+        this.level += 1;
         palanca = false;
         boardScript.h1 = true;
         boardScript.h2 = true;
         boardScript.h3 = true;
         boardScript.h4 = true;
-        boardScript.main = false;
         boardScript.SetupScene(level, 0);
     }
 

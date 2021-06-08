@@ -95,7 +95,7 @@ public abstract class MovingObject : MonoBehaviour
 
     protected void RestartPositionRestaurant()
     {
-        Vector3 posicionInicial = new Vector3(-4, -5, 0);
+        Vector3 posicionInicial = new Vector3(-4, -6, 0);
         transform.position = posicionInicial;
         rb2D.MovePosition(posicionInicial);
     }
