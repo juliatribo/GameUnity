@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
     public BoardManager boardScript;
+    public Loader loader;
+    private int level = 1;
 
 
     public int playerLifePoints = 100;
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
 
         //Get a component reference to the attached BoardManager script
         boardScript = GetComponent<BoardManager>();
-
+        loader = GetComponent<Loader>();
 
 
         //Call the InitGame function to initialize the first level
@@ -43,13 +45,13 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene(0);
+        boardScript.SetupScene(level,0);
 
     }
 
     public void Restaurant()
     {
-        boardScript.SetupScene(1);
+        boardScript.SetupScene(level,1);
       
     }
 
@@ -62,12 +64,18 @@ public class GameManager : MonoBehaviour
     public void Bridge()
     {
         if (palanca==true)
-            boardScript.SetupScene(3);
+            boardScript.SetupScene(level,3);
         else
-            boardScript.SetupScene(0);
+            boardScript.SetupScene(level,0);
     }
 
+    public void Exit()
+    {
+        this.level = level + 1;
+        palanca = false;
+        boardScript.SetupScene(level, 0);
 
+    }
 
     public void GameOver()
     {
@@ -78,6 +86,5 @@ public class GameManager : MonoBehaviour
     //Update is called every frame.
     void Update()
     {
-
     }
 }
