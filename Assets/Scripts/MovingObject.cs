@@ -90,6 +90,14 @@ public abstract class MovingObject : MonoBehaviour
     {
         Vector3 posicionInicial = new Vector3(-7, 6, 0);
         transform.position = posicionInicial;
+        rb2D.MovePosition(posicionInicial);
+    }
+
+    protected void RestartPositionRestaurant()
+    {
+        Vector3 posicionInicial = new Vector3(-4, -5, 0);
+        transform.position = posicionInicial;
+        rb2D.MovePosition(posicionInicial);
     }
 
 }

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
 
     public int playerLifePoints = 100;
-    public  bool palanca = false;
+    public bool palanca = false;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -45,14 +45,14 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene(level,0);
+        boardScript.SetupScene(level, 0);
 
     }
 
     public void Restaurant()
     {
-        boardScript.SetupScene(level,1);
-      
+        boardScript.SetupScene(level, 1);
+
     }
 
 
@@ -63,18 +63,42 @@ public class GameManager : MonoBehaviour
 
     public void Bridge()
     {
-        if (palanca==true)
-            boardScript.SetupScene(level,3);
+        if (palanca == true)
+            boardScript.SetupScene(level, 3);
         else
-            boardScript.SetupScene(level,0);
+            boardScript.SetupScene(level, 0);
+    }
+
+    public void Healthy1()
+    {
+        boardScript.h1 = false;
+    }
+
+    public void Healthy2()
+    {
+        boardScript.h2 = false;
+    }
+
+    public void Healthy3()
+    {
+        boardScript.h3 = false;
+    }
+
+    public void Healthy4()
+    {
+        boardScript.h4 = false;
     }
 
     public void Exit()
     {
         this.level = level + 1;
         palanca = false;
+        boardScript.h1 = true;
+        boardScript.h2 = true;
+        boardScript.h3 = true;
+        boardScript.h4 = true;
+        boardScript.main = false;
         boardScript.SetupScene(level, 0);
-
     }
 
     public void GameOver()

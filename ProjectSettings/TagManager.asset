@@ -11,6 +11,10 @@ TagManager:
   - Bridge
   - Palanca
   - Door
+  - Healthy1
+  - Healthy2
+  - Healthy3
+  - Healthy4
   layers:
   - Default
   - TransparentFX

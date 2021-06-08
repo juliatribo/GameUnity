@@ -87,7 +87,7 @@ public class Player : MovingObject
         }
         else
             animator.SetTrigger("stopMoving");
-            
+
         //Since the player has moved and lost food points, check if the game has ended.
         CheckIfGameOver();
     }
@@ -111,7 +111,7 @@ public class Player : MovingObject
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Restaurant", restartLevelDelay);
-          
+
             //Disable the player object since level is over.
 
         }
@@ -136,13 +136,44 @@ public class Player : MovingObject
         }
 
         //Check if the tag of the trigger collided with is Food.
-        else if (other.tag == "Food")
+        else if (other.tag == "Healthy1")
         {
             //Add pointsPerFood to the players current food total.
             life += pointsPerFood;
 
             //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
+            Invoke("Healthy1", restartLevelDelay);
+        }
+
+        else if (other.tag == "Healthy2")
+        {
+            //Add pointsPerFood to the players current food total.
+            life += pointsPerFood;
+
+            //Disable the food object the player collided with.
+            other.gameObject.SetActive(false);
+            Invoke("Healthy2", restartLevelDelay);
+        }
+
+        else if (other.tag == "Healthy3")
+        {
+            //Add pointsPerFood to the players current food total.
+            life += pointsPerFood;
+
+            //Disable the food object the player collided with.
+            other.gameObject.SetActive(false);
+            Invoke("Healthy3", restartLevelDelay);
+        }
+
+        else if (other.tag == "Healthy4")
+        {
+            //Add pointsPerFood to the players current food total.
+            life += pointsPerFood;
+
+            //Disable the food object the player collided with.
+            other.gameObject.SetActive(false);
+            Invoke("Healthy4", restartLevelDelay);
         }
 
 
@@ -154,14 +185,21 @@ public class Player : MovingObject
     {
         RestartPosition();
         GameManager.instance.Exit();
+        GameObject food1 = GameObject.FindWithTag("Healthy1");
+        food1.SetActive(true);
+        GameObject food2 = GameObject.FindWithTag("Healthy2");
+        food2.SetActive(true);
+        GameObject food3 = GameObject.FindWithTag("Healthy3");
+        food3.SetActive(true);
+        GameObject food4 = GameObject.FindWithTag("Healthy4");
+        food4.SetActive(true);
     }
 
     private void Restaurant()
     {
+        RestartPositionRestaurant();
         GameManager.instance.Restaurant();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
+     
     }
 
     private void Palanca()
@@ -191,6 +229,26 @@ public class Player : MovingObject
 
         //Check to see if game has ended.
         CheckIfGameOver();
+    } 
+
+    public void Healthy1()
+    {
+        GameManager.instance.Healthy1();
+    }
+
+    public void Healthy2()
+    {
+        GameManager.instance.Healthy2();
+    }
+
+    public void Healthy3()
+    {
+        GameManager.instance.Healthy3();
+    }
+
+    public void Healthy4()
+    {
+        GameManager.instance.Healthy4();
     }
 
 
