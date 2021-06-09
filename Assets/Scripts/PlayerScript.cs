@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 using Completed;
 
-public class Player : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public float movementSpeed = 5f;
     private Rigidbody2D rb2d;
@@ -12,8 +12,7 @@ public class Player : MonoBehaviour
     private BoardManager boardScript;
     private float movX, movY;
     private float restartLevelDelay = 1f;
-    private Player player;
-
+    private InventorySystem inventory; 
 
 
     private void Awake()
@@ -22,6 +21,7 @@ public class Player : MonoBehaviour
         this.transform = GetComponent<Transform>();
         this.animator = GetComponent<Animator>();
         this.boardScript = GetComponent<BoardManager>();
+        this.inventory = GetComponent<InventorySystem>(); 
 
     }
     // Start is called before the first frame update
@@ -78,10 +78,8 @@ public class Player : MonoBehaviour
         if (other.tag == "Exit")
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Invoke("Restart", restartLevelDelay);
-
+            Restart();
             //Disable the player object since level is over.
-            enabled = false;
         }
 
         else if (other.tag == "House")
@@ -113,13 +111,15 @@ public class Player : MonoBehaviour
         }
 
         //Check if the tag of the trigger collided with is Food.
-        else if (other.tag == "Food")
+        else if (other.tag == "Healthy1" || other.tag =="Healthy2" || other.tag == "Healthy3" || other.tag == "Healthy4")
         {
             //Add pointsPerFood to the players current food total.
-
-
+            GameManager.instance.setHealthy(other.tag);
+            inventory.addElement(other.gameObject); 
             //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
+
+
         }
 
 
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
     //Restart reloads the scene when called.
     private void Restart()
     {
-        RestartPosition();
+        this.transform.position = new Vector2(-7, 6);
         GameManager.instance.Exit();
     }
 
@@ -155,13 +155,6 @@ public class Player : MonoBehaviour
 
 
         //Load the last scene loaded, in this case Main, the only scene in the game.
-    }
-
-    protected void RestartPosition()
-    {
-        Vector3 posicionInicial = new Vector3(-7, 6, 0);
-        Instantiate(this, posicionInicial, Quaternion.identity);
-        Destroy(this); 
     }
 
 

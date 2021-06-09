@@ -1,0 +1,91 @@
+[33mcommit 7f96d155d67b4e1b75c1a26d539b43435881cbf0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: aayalacdv <aayalacdv2000@gamil.com>
+Date:   Wed Jun 9 04:10:35 2021 +0200
+
+    se pueden coger objetos
+
+[33mcommit d02ee8c1e92671074d685bca874dc5fe112cbe48[m
+Author: aayalacdv <aayalacdv2000@gamil.com>
+Date:   Wed Jun 9 03:28:59 2021 +0200
+
+    carga de jugador y transición entre niveles arreglada
+
+[33mcommit 1a18242a1464c7fcc245f33326d84ad663ffe518[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Wed Jun 9 01:47:20 2021 +0200
+
+    primer y segundo nivel ok
+    
+    solo faltan enemigos y decorarlo con barra de vida
+
+[33mcommit 68e2b4dab61e8c9a313b48eb121b9f236ec4bf5d[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Tue Jun 8 20:59:12 2021 +0200
+
+    cambio de nivel
+    
+    creo que me he dejado algo en el otro commit
+
+[33mcommit d3503eb53900db4075be965b051c3de8edfaba28[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Tue Jun 8 20:57:49 2021 +0200
+
+    cambio de nivel
+    
+    no se mueve el player al llegar al otro nivel
+
+[33mcommit 71756a21d6705adf63d4459db36d32cd956bf84c[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Tue Jun 8 12:57:09 2021 +0200
+
+    un unico game object
+
+[33mcommit 679420497c4725748337b4fa93f6c37200afc1e5[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Tue Jun 8 12:36:17 2021 +0200
+
+    Cambio de nivel
+
+[33mcommit 334fb30dd4c0c4615460172070b6e319734dbd58[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Sat Jun 5 11:13:38 2021 +0200
+
+    nuevos cambios
+
+[33mcommit 81c9850cd04dff17ddffa66b236092723ed7b8a3[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Wed May 26 17:00:28 2021 +0200
+
+    restaurant and bridge
+    
+    cuando toca la palanca y sale del restaurante aparece el puente
+
+[33mcommit ae7d4b3eaa96c36d154a7266ac8ff40f6552bf28[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Tue May 18 16:28:18 2021 +0200
+
+    Movimiento Jugador
+    
+    Movimiento jugador y camara
+
+[33mcommit 04c5c2a240fb65439b147a3acd8045b0dba549a6[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Mon May 17 16:17:18 2021 +0200
+
+    rocks
+    
+    pequeña modificación rocas del rio
+
+[33mcommit b8db30f51a3f1ad9422ebb9da2df5457cc1d07cd[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Mon May 17 16:11:28 2021 +0200
+
+    Assets
+    
+    Mapa 1
+
+[33mcommit 925da5fdf935d60cba11746758aba6d4510cf453[m
+Author: juliatribo <julstribo@gmail.com>
+Date:   Mon May 17 16:05:49 2021 +0200
+
+    Initial commit
