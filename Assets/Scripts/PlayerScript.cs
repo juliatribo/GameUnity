@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     private BoardManager boardScript;
     private float movX, movY;
     private float restartLevelDelay = 1f;
-
+    private InventorySystem inventory; 
 
 
     private void Awake()
@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
         this.transform = GetComponent<Transform>();
         this.animator = GetComponent<Animator>();
         this.boardScript = GetComponent<BoardManager>();
-
+        this.inventory = GetComponent<InventorySystem>(); 
 
     }
     // Start is called before the first frame update
@@ -115,6 +115,7 @@ public class PlayerScript : MonoBehaviour
         {
             //Add pointsPerFood to the players current food total.
             GameManager.instance.setHealthy(other.tag);
+            inventory.addElement(other.gameObject); 
             //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
 
