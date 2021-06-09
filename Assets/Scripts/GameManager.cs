@@ -69,6 +69,25 @@ public class GameManager : MonoBehaviour
             boardScript.SetupScene(level, 0);
     }
 
+
+
+    public void setHealthy(string healthy) {
+        switch (healthy) {
+            case "Healthy1":
+                Healthy1();
+                break;
+            case "Healthy2":
+                Healthy2();
+                break;
+            case "Healthy3":
+                Healthy3();
+                break;
+            case "Healthy4":
+                Healthy4();
+                break; 
+        }
+    
+    }
     public void Healthy1()
     {
         boardScript.h1 = false;

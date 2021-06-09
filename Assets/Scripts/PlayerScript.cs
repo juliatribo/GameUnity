@@ -20,14 +20,14 @@ public class PlayerScript : MonoBehaviour
         this.rb2d = GetComponent<Rigidbody2D>();
         this.transform = GetComponent<Transform>();
         this.animator = GetComponent<Animator>();
-        this.boardScript = GetComponent<BoardManager>(); 
-       
+        this.boardScript = GetComponent<BoardManager>();
+
 
     }
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -79,8 +79,8 @@ public class PlayerScript : MonoBehaviour
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Restart();
-                        //Disable the player object since level is over.
-         }
+            //Disable the player object since level is over.
+        }
 
         else if (other.tag == "House")
         {
@@ -111,13 +111,14 @@ public class PlayerScript : MonoBehaviour
         }
 
         //Check if the tag of the trigger collided with is Food.
-        else if (other.tag == "Food")
+        else if (other.tag == "Healthy1" || other.tag =="Healthy2" || other.tag == "Healthy3" || other.tag == "Healthy4")
         {
             //Add pointsPerFood to the players current food total.
-
-
+            GameManager.instance.setHealthy(other.tag);
             //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
+
+
         }
 
 
@@ -127,7 +128,7 @@ public class PlayerScript : MonoBehaviour
     //Restart reloads the scene when called.
     private void Restart()
     {
-        this.transform.position = new Vector2(-7, 6); 
+        this.transform.position = new Vector2(-7, 6);
         GameManager.instance.Exit();
     }
 
@@ -150,7 +151,7 @@ public class PlayerScript : MonoBehaviour
     private void Bridge()
     {
         GameManager.instance.Bridge();
-        
+
 
         //Load the last scene loaded, in this case Main, the only scene in the game.
     }
