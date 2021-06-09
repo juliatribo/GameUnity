@@ -24,6 +24,7 @@ namespace Completed
         GameObject healthy2;
         GameObject healthy3;
         GameObject healthy4;
+        GameObject player; 
 
         public bool restaurant = false;
         public bool bridge = false;
@@ -34,6 +35,17 @@ namespace Completed
         public bool h3 = true;
         public bool h4 = true;
 
+
+        public GameObject getPlayer() {
+            return this.player; 
+        }
+
+
+
+        private void Awake()
+        {
+        
+        }
         public void SetupScene(int level, int scene)
         {
 
@@ -44,11 +56,17 @@ namespace Completed
                 Destroy(healthy2);
                 Destroy(healthy3);
                 Destroy(healthy4);
+                                
 
                 mainBoard = new GameObject("Board" + level.ToString()).transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoard") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(mainBoard);
+                player = GameObject.Find("Player(Clone)");
+                if (player == null) { 
+                    player = Resources.Load("Player") as GameObject;
+                    Instantiate(player, new Vector2(-7, 6), Quaternion.identity); 
+                }
 
                 if (h1)
                 {

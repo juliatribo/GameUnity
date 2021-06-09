@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 using Completed;
 
-public class Player : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public float movementSpeed = 5f;
     private Rigidbody2D rb2d;
@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     private BoardManager boardScript;
     private float movX, movY;
     private float restartLevelDelay = 1f;
-    private Player player;
 
 
 
@@ -21,13 +20,14 @@ public class Player : MonoBehaviour
         this.rb2d = GetComponent<Rigidbody2D>();
         this.transform = GetComponent<Transform>();
         this.animator = GetComponent<Animator>();
-        this.boardScript = GetComponent<BoardManager>();
+        this.boardScript = GetComponent<BoardManager>(); 
+       
 
     }
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -78,11 +78,9 @@ public class Player : MonoBehaviour
         if (other.tag == "Exit")
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Invoke("Restart", restartLevelDelay);
-
-            //Disable the player object since level is over.
-            enabled = false;
-        }
+            Restart();
+                        //Disable the player object since level is over.
+         }
 
         else if (other.tag == "House")
         {
@@ -129,7 +127,7 @@ public class Player : MonoBehaviour
     //Restart reloads the scene when called.
     private void Restart()
     {
-        RestartPosition();
+        this.transform.position = new Vector2(-7, 6); 
         GameManager.instance.Exit();
     }
 
@@ -152,16 +150,9 @@ public class Player : MonoBehaviour
     private void Bridge()
     {
         GameManager.instance.Bridge();
-
+        
 
         //Load the last scene loaded, in this case Main, the only scene in the game.
-    }
-
-    protected void RestartPosition()
-    {
-        Vector3 posicionInicial = new Vector3(-7, 6, 0);
-        Instantiate(this, posicionInicial, Quaternion.identity);
-        Destroy(this); 
     }
 
 
