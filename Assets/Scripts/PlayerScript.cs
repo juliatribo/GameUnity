@@ -13,8 +13,8 @@ public class PlayerScript : MonoBehaviour
     private HealthManager healthManager; 
     private float movX, movY;
     private float restartLevelDelay = 1f;
-    private InventorySystem inventory; 
-
+    private InventorySystem inventory;
+    private int health = 5; 
 
     private void Awake()
     {
@@ -131,7 +131,12 @@ public class PlayerScript : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Enemy") {
-            this.healthManager.decreaseHealth(); 
+            this.healthManager.decreaseHealth();
+            this.health--;
+            if (this.health == 0) {
+                Reset(); 
+            }
+
         }
         
     }
@@ -168,6 +173,11 @@ public class PlayerScript : MonoBehaviour
         //Load the last scene loaded, in this case Main, the only scene in the game.
     }
 
+
+    public void Reset()
+    {
+        this.inventory.Reset(); 
+    }
 
 
 }

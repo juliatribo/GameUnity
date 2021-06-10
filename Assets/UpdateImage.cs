@@ -28,7 +28,9 @@ public class UpdateImage : MonoBehaviour
 
 
     public void cleanImages() {
-        this.sprites = new Image[4]; 
+        foreach (Image img in this.sprites) {
+            img.sprite = null; 
+        }
     }
 
 }

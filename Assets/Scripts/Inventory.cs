@@ -21,4 +21,10 @@ public class Inventory
         return this.inventory;
     }
 
+
+    public void Reset()
+    {
+        this.inventory = new List<GameObject>(); 
+    }
+
 }

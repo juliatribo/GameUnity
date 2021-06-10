@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public Loader loader;
     private int level = 1;
+    public Player player; 
 
 
     public int playerLifePoints = 100;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     //Awake is always called before any Start functions
     void Awake()
     {
+        
         //Check if instance already exists
         if (instance == null)
 
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Initializes the game for each level.
-    void InitGame()
+    public void InitGame()
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
         boardScript.SetupScene(level, 0);

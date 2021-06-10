@@ -8,7 +8,7 @@ public class InventorySystem : MonoBehaviour
 
 
     private Canvas canvas;
-    private Inventory inventory;
+    public Inventory inventory;
     // Start is called before the first frame update
 
 
@@ -41,4 +41,18 @@ public class InventorySystem : MonoBehaviour
         SpriteRenderer sprirenderer = gameObject.GetComponent<SpriteRenderer>();
         updater.addSprite(sprirenderer.sprite);
     }
+
+
+
+    public void Reset()
+    {
+        UpdateImage updater = canvas.GetComponent<UpdateImage>();
+        updater.cleanImages();
+        this.inventory.Reset(); 
+
+        
+    }
+
+
+
 }

@@ -41,6 +41,13 @@ namespace Completed
         }
 
 
+        public void setValues()
+        {
+            this.main = false;
+            h1 = true; h2 = true; h3 = true; h4 = true; 
+        }
+
+
 
         private void Awake()
         {
@@ -63,9 +70,13 @@ namespace Completed
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(mainBoard);
                 player = GameObject.Find("Player(Clone)");
-                if (player == null) { 
+                if (player == null)
+                {
                     player = Resources.Load("Player") as GameObject;
-                    Instantiate(player, new Vector2(-7, 6), Quaternion.identity); 
+                    Instantiate(player, new Vector2(-7, 6), Quaternion.identity);
+                }
+                else {
+                    player.transform.position = new Vector2(-7, 6); 
                 }
 
                 if (h1)
