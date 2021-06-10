@@ -17,8 +17,9 @@ public class UpdateImage : MonoBehaviour
 
     public void addSprite(Sprite sprite)
     {
-        if (num == 4) {
-            num = 0; 
+        if (num == 4)
+        {
+            num = 0;
         }
         sprites[num].sprite = sprite;
         num++;
@@ -27,11 +28,16 @@ public class UpdateImage : MonoBehaviour
     }
 
 
-    public void cleanImages() {
-        foreach (Image img in this.sprites) {
-            img.sprite = null;
-            this.num = 0; 
+    public void cleanImages()
+    {
+        this.num = 0;
+        for (int i = 0; i < this.sprites.Length; i++) {
+            if (this.sprites[i].sprite != null) {
+                this.sprites[i].sprite = null; 
+            }
         }
+
     }
+
 
 }

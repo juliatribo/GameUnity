@@ -63,6 +63,7 @@ namespace Completed
                 Destroy(healthy2);
                 Destroy(healthy3);
                 Destroy(healthy4);
+                Destroy(GameObject.Find("Board1")); 
                                 
 
                 mainBoard = new GameObject("Board" + level.ToString()).transform;

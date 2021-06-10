@@ -176,6 +176,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Reset()
     {
+        this.health = 5; 
         this.inventory.Reset(); 
     }
 
