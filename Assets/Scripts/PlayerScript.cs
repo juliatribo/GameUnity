@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     private Transform transform;
     private Animator animator;
     private BoardManager boardScript;
+    private HealthManager healthManager; 
     private float movX, movY;
     private float restartLevelDelay = 1f;
     private InventorySystem inventory; 
@@ -21,7 +22,8 @@ public class PlayerScript : MonoBehaviour
         this.transform = GetComponent<Transform>();
         this.animator = GetComponent<Animator>();
         this.boardScript = GetComponent<BoardManager>();
-        this.inventory = GetComponent<InventorySystem>(); 
+        this.inventory = GetComponent<InventorySystem>();
+        this.healthManager = GameObject.Find("Canvas").GetComponent<HealthManager>(); 
 
     }
     // Start is called before the first frame update
@@ -111,11 +113,11 @@ public class PlayerScript : MonoBehaviour
         }
 
         //Check if the tag of the trigger collided with is Food.
-        else if (other.tag == "Healthy1" || other.tag =="Healthy2" || other.tag == "Healthy3" || other.tag == "Healthy4")
+        else if (other.tag == "Healthy1" || other.tag == "Healthy2" || other.tag == "Healthy3" || other.tag == "Healthy4")
         {
             //Add pointsPerFood to the players current food total.
             GameManager.instance.setHealthy(other.tag);
-            inventory.addElement(other.gameObject); 
+            inventory.addElement(other.gameObject);
             //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
 
@@ -123,6 +125,15 @@ public class PlayerScript : MonoBehaviour
         }
 
 
+    }
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy") {
+            this.healthManager.decreaseHealth(); 
+        }
+        
     }
 
 
