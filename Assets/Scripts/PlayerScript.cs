@@ -107,7 +107,6 @@ public class PlayerScript : MonoBehaviour
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
             Invoke("Bridge", restartLevelDelay);
-
             //Disable the player object since level is over.
 
         }
@@ -168,6 +167,7 @@ public class PlayerScript : MonoBehaviour
     private void Bridge()
     {
         GameManager.instance.Bridge();
+        this.transform.position = new Vector2(-4, -6);
 
 
         //Load the last scene loaded, in this case Main, the only scene in the game.

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Completed;
+using System;
 
 public class HealthManager : MonoBehaviour
 {
@@ -68,5 +69,8 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-
+    internal void increaseHealth()
+    {
+        throw new NotImplementedException();
+    }
 }

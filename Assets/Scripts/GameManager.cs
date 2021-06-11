@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public Loader loader;
     private int level = 1;
-    public Player player; 
+    public PlayerScript player; 
 
 
     public int playerLifePoints = 100;
@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     public void Palanca()
     {
         this.palanca = true;
@@ -70,8 +69,6 @@ public class GameManager : MonoBehaviour
         else
             boardScript.SetupScene(level, 0);
     }
-
-
 
     public void setHealthy(string healthy) {
         switch (healthy) {
