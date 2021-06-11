@@ -69,4 +69,11 @@ public class HealthManager : MonoBehaviour
     }
 
 
+    public void increaseHealth(int i) {
+        for (int j = this.count - 1; j < i; j++) {
+            this.hearts[j].sprite = this.heartSprite; 
+        }
+    }
+
+
 }

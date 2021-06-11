@@ -14,7 +14,10 @@ public class PlayerScript : MonoBehaviour
     private float movX, movY;
     private float restartLevelDelay = 1f;
     private InventorySystem inventory;
-    private int health = 5; 
+    private int health = 5;
+    private int healthLimit = 5; 
+
+    private float speedLimit = 8f;  
 
     private void Awake()
     {
@@ -180,5 +183,23 @@ public class PlayerScript : MonoBehaviour
         this.inventory.Reset(); 
     }
 
+
+
+    public float increaseSpeed() {
+        if (this.movementSpeed < this.speedLimit) {
+            this.movementSpeed++; 
+        }
+
+        return this.movementSpeed; 
+    }
+
+
+    public int increaseLife() {
+        if (this.health < this.healthLimit) {
+            this.health++; 
+            this.healthManager.increaseHealth(this.health); 
+        }
+        return this.health; 
+    }
 
 }

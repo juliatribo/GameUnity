@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     //Awake is always called before any Start functions
     void Awake()
     {
+        this.player = FindObjectOfType<Player>(); 
         
         //Check if instance already exists
         if (instance == null)
