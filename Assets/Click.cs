@@ -18,12 +18,21 @@ public class Click : MonoBehaviour, IPointerClickHandler
                 
                 break;
             case "Health":
-                Debug.Log("increasing healt"); 
                 this.player.increaseLife(); 
+                break;
+            case "Resistance":
+                this.player.invincible();
+                Invoke("backToNormal", 3f); 
                 break; 
-                
+
+
         }
         
+    }
+
+
+    public void backToNormal() {
+        this.player.setCanTakeDamage(); 
     }
 
     // Start is called before the first frame update

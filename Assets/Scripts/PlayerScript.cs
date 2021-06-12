@@ -15,8 +15,8 @@ public class PlayerScript : MonoBehaviour
     private float restartLevelDelay = 1f;
     private InventorySystem inventory;
     private int health = 5;
-    private int healthLimit = 5; 
-
+    private int healthLimit = 5;
+    private bool canTakeDamage = true; 
     private float speedLimit = 8f;  
 
     private void Awake()
@@ -133,15 +133,19 @@ public class PlayerScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Enemy") {
-            this.healthManager.decreaseHealth();
-            this.health--;
-            if (this.health == 0) {
-                Reset(); 
-            }
+        if (canTakeDamage)
+        {
+            if (collision.collider.tag == "Enemy")
+            {
+                this.healthManager.decreaseHealth();
+                this.health--;
+                if (this.health == 0)
+                {
+                    Reset();
+                }
 
+            }
         }
-        
     }
 
 
@@ -202,4 +206,11 @@ public class PlayerScript : MonoBehaviour
         return this.health; 
     }
 
+    public void invincible() {
+        this.canTakeDamage = false; 
+    }
+
+    public void setCanTakeDamage() {
+        this.canTakeDamage = true; 
+    }
 }
