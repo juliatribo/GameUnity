@@ -10,14 +10,18 @@ public class PlayerScript : MonoBehaviour
     private Transform transform;
     private Animator animator;
     private BoardManager boardScript;
-    private HealthManager healthManager; 
+    private HealthManager healthManager;
     private float movX, movY;
     private float restartLevelDelay = 1f;
     private InventorySystem inventory;
     private int health = 5;
     private int healthLimit = 5;
-    private bool canTakeDamage = true; 
-    private float speedLimit = 8f;  
+    private bool canTakeDamage = true;
+    private float speedLimit = 8f;
+
+    private Potion healthpotion;
+    private Potion resistancepotion;
+    private Potion speedpotion;
 
     private void Awake()
     {
@@ -26,12 +30,52 @@ public class PlayerScript : MonoBehaviour
         this.animator = GetComponent<Animator>();
         this.boardScript = GetComponent<BoardManager>();
         this.inventory = GetComponent<InventorySystem>();
-        this.healthManager = GameObject.Find("Canvas").GetComponent<HealthManager>(); 
+        this.healthManager = GameObject.Find("Canvas").GetComponent<HealthManager>();
+
+        this.healthpotion = new Potion(Potion.potionType.HEALTH, 2);
+        this.resistancepotion = new Potion(Potion.potionType.RESISTANCE, 3);
+        this.speedpotion = new Potion(Potion.potionType.SPEED, 4);
+
 
     }
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+
+    public int getPotionQuanitity(Potion.potionType type)
+    {
+        switch (type)
+        {
+            case Potion.potionType.HEALTH:
+                return this.healthpotion.GetQuantity();
+            case Potion.potionType.SPEED:
+                return this.speedpotion.GetQuantity();
+            case Potion.potionType.RESISTANCE:
+                return this.resistancepotion.GetQuantity();
+
+        }
+
+        return 0;
+    }
+
+
+    public Potion getPotion(Potion.potionType type)
+    {
+        switch (type)
+        {
+            case Potion.potionType.HEALTH:
+                return this.healthpotion;
+            case Potion.potionType.SPEED:
+                return this.speedpotion;
+            case Potion.potionType.RESISTANCE:
+                return this.resistancepotion;
+
+        }
+
+        return null; 
 
     }
 
@@ -183,34 +227,40 @@ public class PlayerScript : MonoBehaviour
 
     public void Reset()
     {
-        this.health = 5; 
-        this.inventory.Reset(); 
+        this.health = 5;
+        this.inventory.Reset();
     }
 
 
 
-    public float increaseSpeed() {
-        if (this.movementSpeed < this.speedLimit) {
-            this.movementSpeed++; 
+    public float increaseSpeed()
+    {
+        if (this.movementSpeed < this.speedLimit)
+        {
+            this.movementSpeed++;
         }
 
-        return this.movementSpeed; 
+        return this.movementSpeed;
     }
 
 
-    public int increaseLife() {
-        if (this.health < this.healthLimit) {
-            this.health++; 
-            this.healthManager.increaseHealth(this.health); 
+    public int increaseLife()
+    {
+        if (this.health < this.healthLimit)
+        {
+            this.health++;
+            this.healthManager.increaseHealth(this.health);
         }
-        return this.health; 
+        return this.health;
     }
 
-    public void invincible() {
-        this.canTakeDamage = false; 
+    public void invincible()
+    {
+        this.canTakeDamage = false;
     }
 
-    public void setCanTakeDamage() {
-        this.canTakeDamage = true; 
+    public void setCanTakeDamage()
+    {
+        this.canTakeDamage = true;
     }
 }
