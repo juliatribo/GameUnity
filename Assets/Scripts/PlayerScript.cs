@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     private int healthLimit = 5;
     private bool canTakeDamage = true;
     private float speedLimit = 8f;
+    public Vector2 lastPostion;
 
     private Potion healthpotion;
     private Potion resistancepotion;
@@ -41,6 +42,13 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+
+    public Vector2 getLastPosition()
+    {
+        return this.lastPostion; 
 
     }
 
@@ -75,7 +83,7 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        return null; 
+        return null;
 
     }
 
@@ -134,6 +142,7 @@ public class PlayerScript : MonoBehaviour
         else if (other.tag == "House")
         {
             //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
+            this.lastPostion = new Vector2(this.transform.position.x, this.transform.position.y - 1f);
             Invoke("Restaurant", restartLevelDelay);
 
             //Disable the player object since level is over.
@@ -196,7 +205,7 @@ public class PlayerScript : MonoBehaviour
     //Restart reloads the scene when called.
     private void Restart()
     {
-        this.transform.position = new Vector2(-7, 6);
+        this.lastPostion = new Vector2(-7, 6);
         GameManager.instance.Exit();
     }
 

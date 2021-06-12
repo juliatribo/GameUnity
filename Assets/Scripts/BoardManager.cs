@@ -77,7 +77,7 @@ namespace Completed
                     Instantiate(player, new Vector2(-7, 6), Quaternion.identity);
                 }
                 else {
-                    player.transform.position = new Vector2(-7, 6); 
+                    player.transform.position = this.player.GetComponent<PlayerScript>().getLastPosition(); 
                 }
 
                 if (h1)
@@ -140,6 +140,8 @@ namespace Completed
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoardBridge") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(bridgeBoard);
+
+                this.player.transform.position = this.player.GetComponent<PlayerScript>().getLastPosition(); 
 
                 if (h1)
                 {
