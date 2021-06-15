@@ -1,27 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 using System.Collections.Generic;
 using Completed;
 
 public class GameManager : MonoBehaviour
 {
-
+    public float levelStartDelay = 2f;
     public static GameManager instance = null;                //Static instance of GameManager which allows it to be accessed by any other script.
     public BoardManager boardScript;
     public Loader loader;
     private int level = 1;
-    public Player player; 
+    public PlayerScript player;
 
 
-    public int playerLifePoints = 100;
+    public int playerPoints = 0;
+    private int foodPoints = 10;
     public bool palanca = false;
+
+    private Text pointsText;
+    private Text levelText;
+    private GameObject levelImage;
 
     //Awake is always called before any Start functions
     void Awake()
     {
-        this.player = FindObjectOfType<Player>(); 
-        
+        this.player = FindObjectOfType<PlayerScript>();
+
         //Check if instance already exists
         if (instance == null)
 
@@ -39,6 +45,10 @@ public class GameManager : MonoBehaviour
         boardScript = GetComponent<BoardManager>();
         loader = GetComponent<Loader>();
 
+        pointsText = GameObject.Find("PointsText").GetComponent<Text>();
+        levelImage = GameObject.Find("LevelImage");
+        levelText = GameObject.Find("LevelText").GetComponent<Text>();
+        pointsText.text = "Points: " + playerPoints;
 
         //Call the InitGame function to initialize the first level
         InitGame();
@@ -49,7 +59,14 @@ public class GameManager : MonoBehaviour
     {
         //Call the SetupScene function of the BoardManager script, pass it current level number.
         boardScript.SetupScene(level, 0);
+        Invoke("HideLevelImage", levelStartDelay);
 
+    }
+
+    public void Dead()
+    {
+        levelText.text = "Obesity has killed you";
+        levelImage.SetActive(true);
     }
 
     public void Restaurant()
@@ -74,8 +91,12 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void setHealthy(string healthy) {
-        switch (healthy) {
+    public void setHealthy(string healthy)
+    {
+        playerPoints += foodPoints;
+        pointsText.text = "Points: " + playerPoints;
+        switch (healthy)
+        {
             case "Healthy1":
                 Healthy1();
                 break;
@@ -87,9 +108,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "Healthy4":
                 Healthy4();
-                break; 
+                break;
         }
-    
+
     }
     public void Healthy1()
     {
@@ -114,12 +135,23 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         this.level += 1;
+
+        levelText.text = "Level " + this.level;
+        levelImage.SetActive(true);
+        Invoke("HideLevelImage", levelStartDelay);
+
         palanca = false;
         boardScript.h1 = true;
         boardScript.h2 = true;
         boardScript.h3 = true;
         boardScript.h4 = true;
+
         boardScript.SetupScene(level, 0);
+    }
+
+    private void HideLevelImage()
+    {
+        levelImage.SetActive(false);
     }
 
     public void GameOver()

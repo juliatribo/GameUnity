@@ -236,6 +236,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Reset()
     {
+        GameManager.instance.Dead();
         this.health = 5;
         this.inventory.Reset();
     }
