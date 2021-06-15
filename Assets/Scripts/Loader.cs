@@ -8,7 +8,6 @@ public class Loader : MonoBehaviour
     public GameObject gameManager;            //GameManager prefab to instantiate.
     private GameObject player;
     private Vector3 position;
-    private BoardManager boardManager;
 
     void Awake()
     {

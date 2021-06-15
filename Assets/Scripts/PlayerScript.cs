@@ -30,7 +30,9 @@ public class PlayerScript : MonoBehaviour
     public AudioClip hitSound1;
     public AudioClip hitSound2;
     public AudioClip deadSound;
-    public AudioClip endSound;
+    public AudioClip palancaSound;
+
+    private Vector2 touchOrigin = new Vector2(-15, -15);
 
     private void Awake()
     {
@@ -152,6 +154,7 @@ public class PlayerScript : MonoBehaviour
         else if (other.tag == "Palanca")
         {
             GameManager.instance.Palanca();
+            SoundManager.instance.PlaySingle(palancaSound);
         }
 
         else if (other.tag == "Door")
@@ -175,7 +178,9 @@ public class PlayerScript : MonoBehaviour
 
     public void Exit()
     {
-        Restart();
+        GameManager.instance.Exit();
+        this.transform.position = new Vector2(-7, 6);
+        inventory.Reset();
     }
 
     public void Door()
@@ -196,36 +201,18 @@ public class PlayerScript : MonoBehaviour
         {
             if (collision.collider.tag == "Enemy")
             {
-
                 SoundManager.instance.RandomizeSfx(hitSound1, hitSound2);
                 this.healthManager.decreaseHealth();
                 this.health--;
                 if (this.health == 0)
                 {
-                    Reset();
-                    SoundManager.instance.PlaySingle(deadSound);
+                    GameOver();
+                    enabled = false;
                 }
 
             }
         }
     }
-
-    private void Restart()
-    {
-        GameManager.instance.Exit();
-        this.transform.position = new Vector2(-7, 6);
-    }
-
-
-    public void Reset()
-    {
-        GameManager.instance.Dead();
-        this.transform.position = new Vector2(-7, 6);
-        this.health = 5;
-        this.inventory.Reset();
-    }
-
-
 
     public float increaseSpeed()
     {
@@ -256,4 +243,12 @@ public class PlayerScript : MonoBehaviour
     {
         this.canTakeDamage = true;
     }
+
+    public void GameOver()
+    {
+        SoundManager.instance.musicSource.Stop();
+        SoundManager.instance.PlaySingle(deadSound);
+        GameManager.instance.Dead();
+    }
+
 }

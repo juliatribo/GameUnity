@@ -222,7 +222,7 @@ MonoBehaviour:
   hitSound1: {fileID: 8300000, guid: 3a106fa1c569e4943ac2d831167a8a08, type: 3}
   hitSound2: {fileID: 8300000, guid: 5915c528d55c8461d9169eb329ca3077, type: 3}
   deadSound: {fileID: 8300000, guid: d71e88f15092d4365ba3da9a2b3ed62f, type: 3}
-  endSound: {fileID: 8300000, guid: adac51b8836ee4093b2185965db774fe, type: 3}
+  palancaSound: {fileID: 8300000, guid: adac51b8836ee4093b2185965db774fe, type: 3}
 --- !u!114 &1561314058557548363
 MonoBehaviour:
   m_ObjectHideFlags: 0

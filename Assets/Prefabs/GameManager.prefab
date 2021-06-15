@@ -44,8 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4054692f239a24f189571c6bedd45403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelStartDelay: 2
   boardScript: {fileID: -3031001095005498419}
-  playerLifePoints: 100
+  loader: {fileID: 0}
+  player: {fileID: 0}
+  winSound: {fileID: 8300000, guid: a5908df15dce6440d88318ea3e270d4c, type: 3}
+  playerPoints: 0
+  palanca: 0
 --- !u!114 &-3031001095005498419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e27abb785fed4f689e2370accb63a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restaurant: 0
+  bridge: 0
+  main: 0
+  h1: 1
+  h2: 1
+  h3: 1
+  h4: 1

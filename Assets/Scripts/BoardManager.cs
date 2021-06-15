@@ -58,15 +58,9 @@ namespace Completed
 
             if (scene == 0 && !main)
             {
-                Destroy(map);
-                Destroy(healthy1);
-                Destroy(healthy2);
-                Destroy(healthy3);
-                Destroy(healthy4);
-                Destroy(GameObject.Find("Board1")); 
                                 
 
-                mainBoard = new GameObject("Board" + level.ToString()).transform;
+                mainBoard = new GameObject("Board").transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoard") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(mainBoard);
@@ -112,13 +106,8 @@ namespace Completed
 
             else if (scene == 1 && !restaurant)
             {
-                Destroy(map);
-                Destroy(healthy1);
-                Destroy(healthy2);
-                Destroy(healthy3);
-                Destroy(healthy4);
 
-                restaurantBoard = new GameObject("Restaurant" + level.ToString()).transform;
+                restaurantBoard = new GameObject("Restaurant").transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/Restaurant") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(-3, -4, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(restaurantBoard);
@@ -130,13 +119,8 @@ namespace Completed
 
             else if (scene == 3 && !bridge)
             {
-                Destroy(map);
-                Destroy(healthy1);
-                Destroy(healthy2);
-                Destroy(healthy3);
-                Destroy(healthy4);
 
-                bridgeBoard = new GameObject("Bridge" + level.ToString()).transform;
+                bridgeBoard = new GameObject("Bridge").transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoardBridge") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(bridgeBoard);

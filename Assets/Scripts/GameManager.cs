@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private int level = 1;
     public PlayerScript player;
 
+    public AudioClip winSound;
+
 
     public int playerPoints = 0;
     private int foodPoints = 10;
@@ -63,12 +65,8 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Dead()
+    private void Reset()
     {
-        levelText.text = "Obesity has killed you";
-        levelImage.SetActive(true);
-        playerPoints = 0;
-        pointsText.text = "Points: " + playerPoints;
         palanca = false;
         boardScript.h1 = true;
         boardScript.h2 = true;
@@ -76,9 +74,19 @@ public class GameManager : MonoBehaviour
         boardScript.h4 = true;
     }
 
+    public void Dead()
+    {
+        string[] enfermedades = { "Obesity", "Diabetes", "Hypertension", "Choesterol"};
+        int enfermedad = Random.Range(0,enfermedades.Length);
+        levelText.text = enfermedades[enfermedad] + " has killed you";
+        levelImage.SetActive(true);
+        this.GameOver();
+    }
+
     public void Restaurant()
     {
         boardScript.SetupScene(level, 1);
+        Destroy(GameObject.Find("Board"));
 
     }
 
@@ -91,9 +99,15 @@ public class GameManager : MonoBehaviour
     public void Bridge()
     {
         if (palanca == true)
+        {
             boardScript.SetupScene(level, 3);
+        }
         else
+        {
             boardScript.SetupScene(level, 0);
+        }
+
+        Destroy(GameObject.Find("Restaurant"));
     }
 
 
@@ -141,16 +155,24 @@ public class GameManager : MonoBehaviour
 
     public void Exit()
     {
-        this.level += 1;
-        levelText.text = "Level " + this.level;
-        levelImage.SetActive(true);
-        Invoke("HideLevelImage", levelStartDelay);
-        palanca = false;
-        boardScript.h1 = true;
-        boardScript.h2 = true;
-        boardScript.h3 = true;
-        boardScript.h4 = true;
-        boardScript.SetupScene(level, 0);
+        if (level < 4)
+        {
+            this.level += 1;
+            levelText.text = "Level " + this.level;
+            levelImage.SetActive(true);
+            Invoke("HideLevelImage", levelStartDelay);
+            Reset();
+            boardScript.SetupScene(level, 0);
+            Destroy(GameObject.Find("Bridge"));
+        }
+        else
+        {
+            levelText.text = "Congratulations, you are healthy!!";
+            levelImage.SetActive(true);
+            SoundManager.instance.musicSource.Stop();
+            SoundManager.instance.PlaySingle(winSound);
+            GameOver();
+        }
     }
 
     private void HideLevelImage()
@@ -160,12 +182,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        enabled = false;
+
+        Destroy(GameObject.Find("GameManager(Clone)"));
     }
 
-
-    //Update is called every frame.
-    void Update()
-    {
-    }
 }
