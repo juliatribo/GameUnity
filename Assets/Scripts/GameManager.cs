@@ -67,6 +67,13 @@ public class GameManager : MonoBehaviour
     {
         levelText.text = "Obesity has killed you";
         levelImage.SetActive(true);
+        playerPoints = 0;
+        pointsText.text = "Points: " + playerPoints;
+        palanca = false;
+        boardScript.h1 = true;
+        boardScript.h2 = true;
+        boardScript.h3 = true;
+        boardScript.h4 = true;
     }
 
     public void Restaurant()
@@ -135,17 +142,14 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         this.level += 1;
-
         levelText.text = "Level " + this.level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
-
         palanca = false;
         boardScript.h1 = true;
         boardScript.h2 = true;
         boardScript.h3 = true;
         boardScript.h4 = true;
-
         boardScript.SetupScene(level, 0);
     }
 

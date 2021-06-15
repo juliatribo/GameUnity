@@ -24,6 +24,14 @@ public class PlayerScript : MonoBehaviour
     private Potion resistancepotion;
     private Potion speedpotion;
 
+  
+    public AudioClip eatSound1;
+    public AudioClip eatSound2;
+    public AudioClip hitSound1;
+    public AudioClip hitSound2;
+    public AudioClip deadSound;
+    public AudioClip endSound;
+
     private void Awake()
     {
         this.rb2d = GetComponent<Rigidbody2D>();
@@ -124,8 +132,6 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetTrigger("moving");
         }
-
-
     }
 
 
@@ -134,53 +140,53 @@ public class PlayerScript : MonoBehaviour
         //Check if the tag of the trigger collided with is Exit.
         if (other.tag == "Exit")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Restart();
-            //Disable the player object since level is over.
+            Invoke("Exit",restartLevelDelay);
         }
 
         else if (other.tag == "House")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            this.lastPostion = new Vector2(this.transform.position.x, this.transform.position.y - 1f);
-            Invoke("Restaurant", restartLevelDelay);
-
-            //Disable the player object since level is over.
-
+            Invoke("House", restartLevelDelay);
         }
 
 
         else if (other.tag == "Palanca")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Invoke("Palanca", restartLevelDelay);
-
-            //Disable the player object since level is over.
-
+            GameManager.instance.Palanca();
         }
 
         else if (other.tag == "Door")
         {
-            //Invoke the Restart function to start the next level with a delay of restartLevelDelay (default 1 second).
-            Invoke("Bridge", restartLevelDelay);
-
-            //Disable the player object since level is over.
+            Invoke("Door", restartLevelDelay);
 
         }
 
-        //Check if the tag of the trigger collided with is Food.
         else if (other.tag == "Healthy1" || other.tag == "Healthy2" || other.tag == "Healthy3" || other.tag == "Healthy4")
         {
-            //Add pointsPerFood to the players current food total.
+            SoundManager.instance.RandomizeSfx(eatSound1,eatSound2);
             GameManager.instance.setHealthy(other.tag);
             inventory.addElement(other.gameObject);
-            //Disable the food object the player collided with.
             other.gameObject.SetActive(false);
 
 
         }
 
 
+    }
+
+    public void Exit()
+    {
+        Restart();
+    }
+
+    public void Door()
+    {
+        GameManager.instance.Bridge();
+        this.transform.position = new Vector2(-4, -6);
+    }
+
+    public void House()
+    {
+        GameManager.instance.Restaurant();
     }
 
 
@@ -190,53 +196,31 @@ public class PlayerScript : MonoBehaviour
         {
             if (collision.collider.tag == "Enemy")
             {
+
+                SoundManager.instance.RandomizeSfx(hitSound1, hitSound2);
                 this.healthManager.decreaseHealth();
                 this.health--;
                 if (this.health == 0)
                 {
                     Reset();
+                    SoundManager.instance.PlaySingle(deadSound);
                 }
 
             }
         }
     }
 
-
-    //Restart reloads the scene when called.
     private void Restart()
     {
-        this.lastPostion = new Vector2(-7, 6);
         GameManager.instance.Exit();
-    }
-
-    private void Restaurant()
-    {
-        GameManager.instance.Restaurant();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
-    }
-
-    private void Palanca()
-    {
-        GameManager.instance.Palanca();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
-    }
-
-    private void Bridge()
-    {
-        GameManager.instance.Bridge();
-
-
-        //Load the last scene loaded, in this case Main, the only scene in the game.
+        this.transform.position = new Vector2(-7, 6);
     }
 
 
     public void Reset()
     {
         GameManager.instance.Dead();
+        this.transform.position = new Vector2(-7, 6);
         this.health = 5;
         this.inventory.Reset();
     }
@@ -249,7 +233,6 @@ public class PlayerScript : MonoBehaviour
         {
             this.movementSpeed++;
         }
-
         return this.movementSpeed;
     }
 
