@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  heartSprite: {fileID: 0}
 --- !u!1 &4612187067942024389
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ GameObject:
   - component: {fileID: 3315052670563722346}
   - component: {fileID: 1561314058557548363}
   m_Layer: 9
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,6 +216,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  lastPostion: {x: 0, y: 0}
+  eatSound1: {fileID: 8300000, guid: c3a80cad095b8485ba3c35338e1493bd, type: 3}
+  eatSound2: {fileID: 8300000, guid: c96ba5500c3814272b9dc5e512b50de0, type: 3}
+  hitSound1: {fileID: 8300000, guid: 3a106fa1c569e4943ac2d831167a8a08, type: 3}
+  hitSound2: {fileID: 8300000, guid: 5915c528d55c8461d9169eb329ca3077, type: 3}
+  deadSound: {fileID: 8300000, guid: d71e88f15092d4365ba3da9a2b3ed62f, type: 3}
+  endSound: {fileID: 8300000, guid: adac51b8836ee4093b2185965db774fe, type: 3}
 --- !u!114 &1561314058557548363
 MonoBehaviour:
   m_ObjectHideFlags: 0
