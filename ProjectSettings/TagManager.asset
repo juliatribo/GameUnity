@@ -15,6 +15,7 @@ TagManager:
   - Healthy2
   - Healthy3
   - Healthy4
+  - Joystick
   layers:
   - Default
   - TransparentFX

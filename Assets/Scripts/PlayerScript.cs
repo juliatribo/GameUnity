@@ -2,9 +2,17 @@
 using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 using Completed;
+using EasyJoystick;
 
 public class PlayerScript : MonoBehaviour
 {
+
+
+    [SerializeField] private float speed;
+    private Joystick joystick;
+
+
+
     public float movementSpeed = 5f;
     private Rigidbody2D rb2d;
     private Transform transform;
@@ -46,6 +54,8 @@ public class PlayerScript : MonoBehaviour
         this.healthpotion = new Potion(Potion.potionType.HEALTH, 2);
         this.resistancepotion = new Potion(Potion.potionType.RESISTANCE, 3);
         this.speedpotion = new Potion(Potion.potionType.SPEED, 4);
+
+        this.joystick = FindObjectOfType<Joystick>();
 
 
     }
@@ -111,6 +121,8 @@ public class PlayerScript : MonoBehaviour
 
     private void getInput()
     {
+    
+    #if UNITY_STANDALONE || UNITY_WEBPLAYER
         this.movY = Input.GetAxisRaw("Vertical");
         this.movX = Input.GetAxisRaw("Horizontal");
         if (movX < 0)
@@ -121,6 +133,16 @@ public class PlayerScript : MonoBehaviour
         {
             this.transform.localScale = new Vector2(1, 1);
         }
+
+    #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+
+        movX = joystick.Horizontal();
+        movY = joystick.Vertical();
+
+        transform.position += new Vector3(movX, movY, 0f) * speed * Time.deltaTime;
+
+
+    #endif //End of mobile platform dependendent compilation section started above with #elif
     }
 
     private void movePlayer()
@@ -135,6 +157,7 @@ public class PlayerScript : MonoBehaviour
             animator.SetTrigger("moving");
         }
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
