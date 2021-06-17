@@ -85,8 +85,12 @@ public class GameManager : MonoBehaviour
 
     public void Restaurant()
     {
+        if (palanca)
+            Destroy(GameObject.Find("Bridge"));
+        else
+            Destroy(GameObject.Find("Board"));
+
         boardScript.SetupScene(level, 1);
-        Destroy(GameObject.Find("Board"));
 
     }
 
@@ -98,7 +102,8 @@ public class GameManager : MonoBehaviour
 
     public void Bridge()
     {
-        if (palanca == true)
+        Destroy(GameObject.Find("Restaurant"));
+        if (palanca)
         {
             boardScript.SetupScene(level, 3);
         }
@@ -106,8 +111,6 @@ public class GameManager : MonoBehaviour
         {
             boardScript.SetupScene(level, 0);
         }
-
-        Destroy(GameObject.Find("Restaurant"));
     }
 
 
