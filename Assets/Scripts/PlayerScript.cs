@@ -142,7 +142,7 @@ public class PlayerScript : MonoBehaviour
         transform.position += new Vector3(movX, movY, 0f) * speed * Time.deltaTime;
 
 
-    #endif //End of mobile platform dependendent compilation section started above with #elif
+    #endif 
     }
 
     private void movePlayer()
@@ -162,7 +162,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Check if the tag of the trigger collided with is Exit.
+       
         if (other.tag == "Exit")
         {
             Invoke("Exit",restartLevelDelay);
