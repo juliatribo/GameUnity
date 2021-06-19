@@ -55,12 +55,15 @@ namespace Completed
         }
         public void SetupScene(int level, int scene)
         {
+            //basándonos en la escena y el nivel pedimos todo el nivel así seteamos todas las propiedades: 
+
 
             if (scene == 0 && !main)
             {
                                 
-
+                //pedir al servidorl la uri del recurso board 
                 mainBoard = new GameObject("Board").transform;
+                //meter el recurso para cargarlo
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoard") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(mainBoard);
@@ -76,6 +79,7 @@ namespace Completed
 
                 if (h1)
                 {
+                    
                     toInstantiate2 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy1") as GameObject;
                     healthy1= Instantiate(toInstantiate2, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy1.transform.SetParent(mainBoard);
@@ -106,7 +110,7 @@ namespace Completed
 
             else if (scene == 1 && !restaurant)
             {
-
+                //pedir el restaurante 
                 restaurantBoard = new GameObject("Restaurant").transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/Restaurant") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(-3, -4, 0), Quaternion.identity) as GameObject;
@@ -119,7 +123,7 @@ namespace Completed
 
             else if (scene == 3 && !bridge)
             {
-
+                //pedir el puente
                 bridgeBoard = new GameObject("Bridge").transform;
                 toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoardBridge") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;

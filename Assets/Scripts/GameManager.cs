@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     public void InitGame()
     {
+        //call the api for the corresponding level 
+        
         //Call the SetupScene function of the BoardManager script, pass it current level number.
         boardScript.SetupScene(level, 0);
         Invoke("HideLevelImage", levelStartDelay);
