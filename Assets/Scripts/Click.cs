@@ -47,7 +47,7 @@ public class Click : MonoBehaviour, IPointerClickHandler
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void setPotionSprite()
     {
         this.player = GameObject.Find("Player(Clone)").GetComponent<PlayerScript>();
         switch (this.name)

@@ -51,10 +51,6 @@ public class PlayerScript : MonoBehaviour
         this.inventory = GetComponent<InventorySystem>();
         this.healthManager = GameObject.Find("Canvas").GetComponent<HealthManager>();
 
-        this.healthpotion = new Potion(Potion.potionType.HEALTH, 2);
-        this.resistancepotion = new Potion(Potion.potionType.RESISTANCE, 3);
-        this.speedpotion = new Potion(Potion.potionType.SPEED, 4);
-
         this.joystick = FindObjectOfType<Joystick>();
 
 
@@ -107,6 +103,23 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    public void setPotion(Potion potion)
+    {
+        switch (potion.GetType())
+        {
+            case Potion.potionType.HEALTH:
+               this.healthpotion = new Potion(potion.GetType(), potion.GetQuantity());
+               break; 
+            case Potion.potionType.SPEED:
+                this.speedpotion = new Potion(potion.GetType(), potion.GetQuantity());
+                break; 
+            case Potion.potionType.RESISTANCE:
+                this.resistancepotion = new Potion(potion.GetType(), potion.GetQuantity());
+                break; 
+
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
