@@ -5,6 +5,13 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Completed;
 
+using System.Net.Http; 
+using System.Net; 
+using System.Text; 
+using System.Threading.Tasks; 
+using System; 
+using Newtonsoft.Json;
+
 public class GameManager : MonoBehaviour
 {
     public float levelStartDelay = 2f;
@@ -16,20 +23,31 @@ public class GameManager : MonoBehaviour
 
     public AudioClip winSound;
 
-
+    [Serializable]
+    public class Level{
+    public string level; 
+    }
     public int playerPoints = 0;
     private int foodPoints = 10;
     public bool palanca = false;
 
     private Text pointsText;
     private Text levelText;
+    
+    private NetworkManagerScript networkManagerScript; 
     private GameObject levelImage;
-
+    List<Level> levels; 
     //Awake is always called before any Start functions
-    void Awake()
+    private string baseURL = "http://localhost:8080/myapp/game/";  
+    private HttpClient client = new HttpClient(); 
+        async Task Awake()
     {
+        this.levels = new List<Level>(); 
+       
         this.player = FindObjectOfType<PlayerScript>();
-
+        this.networkManagerScript = GameObject.Find("NetworkManager").GetComponent<NetworkManagerScript>(); 
+    
+         
         //Check if instance already exists
         if (instance == null)
 
@@ -52,18 +70,27 @@ public class GameManager : MonoBehaviour
         levelText = GameObject.Find("LevelText").GetComponent<Text>();
         pointsText.text = "Points: " + playerPoints;
 
+
         //Call the InitGame function to initialize the first level
-        InitGame();
+    }
+
+    public List<string> lpaths = new List<string>(); 
+    private async Task Start() {
+        
+        await InitGame();
+        this.loader.followplayer = true; 
+        
     }
 
     //Initializes the game for each level.
-    public void InitGame()
+    public async Task InitGame()
     {
         //call the api for the corresponding level 
-        
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene(level, 0);
+        await GetMapsAsync(); 
+        boardScript.SetupScene(level, 0, this.levels[level-1].level);
         Invoke("HideLevelImage", levelStartDelay);
+        
 
     }
 
@@ -79,7 +106,7 @@ public class GameManager : MonoBehaviour
     public void Dead()
     {
         string[] enfermedades = { "Obesity", "Diabetes", "Hypertension", "Choesterol"};
-        int enfermedad = Random.Range(0,enfermedades.Length);
+        int enfermedad = UnityEngine.Random.Range(0,enfermedades.Length);
         levelText.text = enfermedades[enfermedad] + " has killed you";
         levelImage.SetActive(true);
         this.GameOver();
@@ -92,7 +119,7 @@ public class GameManager : MonoBehaviour
         else
             Destroy(GameObject.Find("Board"));
 
-        boardScript.SetupScene(level, 1);
+        boardScript.SetupScene(level, 1,this.levels[level-1].level);
 
     }
 
@@ -107,11 +134,11 @@ public class GameManager : MonoBehaviour
         Destroy(GameObject.Find("Restaurant"));
         if (palanca)
         {
-            boardScript.SetupScene(level, 3);
+            boardScript.SetupScene(level, 3,this.levels[level-1].level);
         }
         else
         {
-            boardScript.SetupScene(level, 0);
+            boardScript.SetupScene(level, 0,this.levels[level-1].level);
         }
     }
 
@@ -167,7 +194,7 @@ public class GameManager : MonoBehaviour
             levelImage.SetActive(true);
             Invoke("HideLevelImage", levelStartDelay);
             Reset();
-            boardScript.SetupScene(level, 0);
+            boardScript.SetupScene(level, 0,this.levels[level-1].level);
             Destroy(GameObject.Find("Bridge"));
         }
         else
@@ -191,4 +218,10 @@ public class GameManager : MonoBehaviour
         Destroy(GameObject.Find("GameManager(Clone)"));
     }
 
+     public async Task GetMapsAsync(){
+        string url = "http://localhost:8080/myapp/game/levelprefabs"; 
+        var response = await client.GetStringAsync(url); 
+        levels = JsonConvert.DeserializeObject<List<Level>>(response); 
+     
+    }
 }

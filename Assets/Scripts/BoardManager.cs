@@ -36,6 +36,10 @@ namespace Completed
         public bool h4 = true;
 
 
+        public List<String> levelPaths; 
+        private NetworkManagerScript networkManagerScript; 
+
+
         public GameObject getPlayer() {
             return this.player; 
         }
@@ -51,20 +55,32 @@ namespace Completed
 
         private void Awake()
         {
-        
+            levelPaths = new List<String>(); 
+            this.networkManagerScript = GameObject.Find("NetworkManager").GetComponent<NetworkManagerScript>(); 
+         
         }
-        public void SetupScene(int level, int scene)
-        {
-            //basándonos en la escena y el nivel pedimos todo el nivel así seteamos todas las propiedades: 
 
+
+        private void Start() {
+           
+        }
+        public void SetupScene(int level, int scene, string path)
+        {
+               
+            //basándonos en la escena y el nivel pedimos todo el nivel así seteamos todas las propiedades: 
+            foreach(NetworkManagerScript.Level l  in this.networkManagerScript.levels){
+                Debug.Log(l);
+            }
 
             if (scene == 0 && !main)
             {
+
+
                                 
                 //pedir al servidorl la uri del recurso board 
                 mainBoard = new GameObject("Board").transform;
                 //meter el recurso para cargarlo
-                toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoard") as GameObject;
+                toInstantiate = Resources.Load(path+ "/MainBoard") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(mainBoard);
                 player = GameObject.Find("Player(Clone)");
@@ -80,25 +96,25 @@ namespace Completed
                 if (h1)
                 {
                     
-                    toInstantiate2 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy1") as GameObject;
+                    toInstantiate2 = Resources.Load(path + "/Healthy1") as GameObject;
                     healthy1= Instantiate(toInstantiate2, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy1.transform.SetParent(mainBoard);
                 }
                 if (h2)
                 {
-                    toInstantiate3 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy2") as GameObject;
+                    toInstantiate3 = Resources.Load(path + "/Healthy2") as GameObject;
                     healthy2 = Instantiate(toInstantiate3, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy2.transform.SetParent(mainBoard);
                 }
                 if (h3)
                 {
-                    toInstantiate4 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy3") as GameObject;
+                    toInstantiate4 = Resources.Load(path+ "/Healthy3") as GameObject;
                     healthy3 = Instantiate(toInstantiate4, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy3.transform.SetParent(mainBoard);
                 }
                 if (h4)
                 {
-                    toInstantiate5 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy4") as GameObject;
+                    toInstantiate5 = Resources.Load(path+ "/Healthy4") as GameObject;
                     healthy4 = Instantiate(toInstantiate5, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy4.transform.SetParent(mainBoard);
                 }
@@ -112,7 +128,7 @@ namespace Completed
             {
                 //pedir el restaurante 
                 restaurantBoard = new GameObject("Restaurant").transform;
-                toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/Restaurant") as GameObject;
+                toInstantiate = Resources.Load(path + "/Restaurant") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(-3, -4, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(restaurantBoard);
 
@@ -125,7 +141,7 @@ namespace Completed
             {
                 //pedir el puente
                 bridgeBoard = new GameObject("Bridge").transform;
-                toInstantiate = Resources.Load("Prefabs/Level" + level.ToString() + "/MainBoardBridge") as GameObject;
+                toInstantiate = Resources.Load(path + "/MainBoardBridge") as GameObject;
                 map = Instantiate(toInstantiate, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                 map.transform.SetParent(bridgeBoard);
 
@@ -133,25 +149,25 @@ namespace Completed
 
                 if (h1)
                 {
-                    toInstantiate2 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy1") as GameObject;
+                    toInstantiate2 = Resources.Load(path+ "/Healthy1") as GameObject;
                     healthy1 = Instantiate(toInstantiate2, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy1.transform.SetParent(bridgeBoard);
                 }
                 if (h2)
                 {
-                    toInstantiate3 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy2") as GameObject;
+                    toInstantiate3 = Resources.Load(path + "/Healthy2") as GameObject;
                     healthy2 = Instantiate(toInstantiate3, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy2.transform.SetParent(bridgeBoard);
                 }
                 if (h3)
                 {
-                    toInstantiate4 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy3") as GameObject;
+                    toInstantiate4 = Resources.Load(path + "/Healthy3") as GameObject;
                     healthy3 = Instantiate(toInstantiate4, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy3.transform.SetParent(bridgeBoard);
                 }
                 if (h4)
                 {
-                    toInstantiate5 = Resources.Load("Prefabs/Level" + level.ToString() + "/Healthy4") as GameObject;
+                    toInstantiate5 = Resources.Load(path+ "/Healthy4") as GameObject;
                     healthy4 = Instantiate(toInstantiate5, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     healthy4.transform.SetParent(bridgeBoard);
                 }

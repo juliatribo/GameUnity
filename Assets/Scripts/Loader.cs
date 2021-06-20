@@ -7,6 +7,7 @@ public class Loader : MonoBehaviour
 {
     public GameObject gameManager;            //GameManager prefab to instantiate.
     private GameObject player;
+    public bool followplayer = false; 
     private Vector3 position;
 
     void Awake()
@@ -23,15 +24,21 @@ public class Loader : MonoBehaviour
     }
 
     private void Start()
-    {
-        this.player = GameObject.Find("Player(Clone)") as GameObject;
-        position = transform.position - player.transform.position;
+    {  
+        position = transform.position - new Vector3(-7,6,0);
 
     }
 
     void Update()
     {
-        transform.position = player.transform.position + position;
+        
+        this.player = GameObject.Find("Player(Clone)") as GameObject;
+        if(this.player != null){
+            transform.position = player.transform.position + position;
+        }
+
+        
+        
     }
 
 
