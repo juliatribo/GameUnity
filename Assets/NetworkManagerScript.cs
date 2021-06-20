@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System; 
 using Newtonsoft.Json;
 using UnityEngine.UI; 
-public class NetworkManagerScript : MonoBehaviour
+public class NetworkManager : MonoBehaviour
 {
 
 [Serializable]
@@ -16,21 +16,14 @@ public class InitGame{
     public string userId; 
 
 }
-
-[Serializable]
-public class PlayerUpdate{
-    public string userId; 
-    public int money; 
-}
-
 [Serializable]
 public class Game {
     
     public string id;
     public string date;
     public string idPlayer;
-    public int levelsPassed = 0;
-    public float duration = 0f ;
+    public int levelsPassed;
+    public float duration;
 
 }
 
@@ -38,7 +31,7 @@ public class PotionResponse{
     public int amount; 
     public string idProduct; 
 }
-private string baseURL = "http://localhost:8080/myapp/game/";  
+private string baseURL = "http://localhost:8080/myapp/game/newgame";  
 private HttpClient client = new HttpClient(); 
 
 private Game game;
@@ -48,8 +41,6 @@ private PlayerScript player;
 public GameObject resistanceImg; 
 public GameObject healthImg; 
 public GameObject speedImg; 
-
-public float elapsed_time; 
 //la referencia de esta variable ha de venir de la app de android 
 private string username = "lau"; 
     
@@ -102,7 +93,7 @@ private string username = "lau";
         var data = JsonUtility.ToJson(init); 
         HttpContent content = new StringContent(data,System.Text.Encoding.UTF8,"application/json");
         
-        var response = await client.PostAsync(baseURL+"newgame",content); 
+        var response = await client.PostAsync(baseURL,content); 
         if(response.IsSuccessStatusCode){
             var result = await response.Content.ReadAsStringAsync(); 
             this.game = JsonUtility.FromJson<Game>(result); 
@@ -112,38 +103,8 @@ private string username = "lau";
     }
 
 
-    public async Task PostGame_Async(){
-        var data = JsonUtility.ToJson(this.game); 
-        HttpContent content = new StringContent(data,System.Text.Encoding.UTF8,"application/json");
-        var response = await client.PostAsync(baseURL+"endgame",content);
-        if(response.IsSuccessStatusCode){
-            var result = await response.Content.ReadAsStringAsync(); 
-            Debug.Log(result.ToString());
-            
-        }
-
-    }
-
-
-    public async Task PostUser_Async(){
-        PlayerUpdate playerUpdate = new PlayerUpdate(){
-            userId = this.username,
-            money = GameManager.instance.playerPoints
-
-        }; 
-        var data = JsonUtility.ToJson(playerUpdate); 
-        HttpContent content = new StringContent(data,System.Text.Encoding.UTF8,"application/json");
-        var response = await client.PostAsync(baseURL+"updateplayer",content);
-        if(response.IsSuccessStatusCode){
-            var result = await response.Content.ReadAsStringAsync(); 
-            Debug.Log(result.ToString());
-            
-        }
-    }
-
-
     private void Update() {
-        this.elapsed_time+=Time.time; 
+        this.game.duration += Time.time; 
     }
 
 

@@ -42,6 +42,8 @@ public class PlayerScript : MonoBehaviour
 
     private Vector2 touchOrigin = new Vector2(-15, -15);
 
+    private NetworkManagerScript networkManager; 
+
     private void Awake()
     {
         this.rb2d = GetComponent<Rigidbody2D>();
@@ -49,6 +51,7 @@ public class PlayerScript : MonoBehaviour
         this.animator = GetComponent<Animator>();
         this.boardScript = GetComponent<BoardManager>();
         this.inventory = GetComponent<InventorySystem>();
+        this.networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManagerScript>();  
         this.healthManager = GameObject.Find("Canvas").GetComponent<HealthManager>();
 
         this.joystick = FindObjectOfType<Joystick>();
@@ -216,6 +219,8 @@ public class PlayerScript : MonoBehaviour
     {
         GameManager.instance.Exit();
         this.transform.position = new Vector2(-7, 6);
+        this.networkManager.GetGame().levelsPassed++; 
+        Debug.Log(this.networkManager.GetGame().levelsPassed);
         inventory.Reset();
     }
 
@@ -280,11 +285,15 @@ public class PlayerScript : MonoBehaviour
         this.canTakeDamage = true;
     }
 
-    public void GameOver()
+    public async void GameOver()
     {
         SoundManager.instance.musicSource.Stop();
         SoundManager.instance.PlaySingle(deadSound);
         GameManager.instance.Dead();
+        this.networkManager.GetGame().duration = this.networkManager.elapsed_time; 
+        //enviar al servidor los datos de la partida 
+        await this.networkManager.PostGame_Async(); 
+        await this.networkManager.PostUser_Async(); 
     }
 
 }
